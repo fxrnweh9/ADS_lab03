@@ -46,7 +46,7 @@ public class MyHashTable<K, V> {
         return hashCode;
     }
 
-    private void put(K key, V value) {
+    public void put(K key, V value) {
 
         if (key == null || value == null) {
             throw new IllegalArgumentException("hash and value null");
