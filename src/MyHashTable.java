@@ -1,5 +1,6 @@
-public class MyHashTable<K, V> {
+import java.util.NoSuchElementException;
 
+public class MyHashTable<K, V> {
 
     private class HashNode<K, V> {
 
@@ -28,11 +29,58 @@ public class MyHashTable<K, V> {
 
     public MyHashTable(int M) {}
 
-    private int hash(K key) {}
+    private int hash(K key) {
 
-    private void put(K key, V value) {}
+        if (key == null) {
+            throw new IllegalArgumentException("hash null");
+        }
+        int hash = key.hashCode();
+        int hashCode = Math.abs(hash % M);
+        return hashCode;
+    }
 
-    public V get(K key) {}
+    private void put(K key, V value) {
+
+        if (key == null) {
+            throw new IllegalArgumentException("hash null");
+        }
+
+        int index = hash(key);
+
+        HashNode<K, V> node = chainArray[index];
+
+        while (node != null) {
+            if (key.equals(node.key)) {
+                node.value = value;
+                return;
+            }
+            node = node.next;
+        }
+
+        HashNode<K, V> newNode = new HashNode<>(key, value);
+        newNode.next = chainArray[index];
+        chainArray[index] = newNode;
+        size++;
+    }
+
+    public V get(K key) {
+
+        if (key == null) {
+            throw new IllegalArgumentException("hash null");
+        }
+        int index = hash(key);
+
+
+        HashNode<K, V> node = chainArray[index];
+
+        while (node != null) {
+            if (key.equals(node.key)) {
+                return node.value;
+            }
+            node = node.next;
+        }
+        return null;
+    }
 
     public V remove(K key) {}
 
