@@ -1,4 +1,4 @@
-import Test.TestMyHashTable;
+import tests.TestMyHashTable;
 
 import java.util.Scanner;
 
