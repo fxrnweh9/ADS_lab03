@@ -157,5 +157,20 @@ public class MyHashTable<K, V> {
         }
         chainArray = newChainArray;
         M = newSize;
+
+
     }
+
+    public void printBucketSizes() {
+        for (int i = 0; i < M; i++) {
+            int count = 0;
+            HashNode<K, V> node = chainArray[i];
+            while (node != null) {
+                count++;
+                node = node.next;
+            }
+            System.out.println("Bucket " + i + ": " + count + " elements");
+        }
+    }
+
 }

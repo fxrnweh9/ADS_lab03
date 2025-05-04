@@ -16,10 +16,10 @@ public class TestMyHashTable {
         System.out.println(" ");
 
 
-
         myHashTable.put(1, "Olzhas Omerzak" );
         myHashTable.put(7, "Zhurtyn Balasy");
         myHashTable.put(12, "Palensheyev Palenshe");
+
 
         System.out.println(" ");
         System.out.println("_______________________________________________");
@@ -27,6 +27,7 @@ public class TestMyHashTable {
         System.out.println("value key 1 " + myHashTable.get(1));
         System.out.println("value key 7 " + myHashTable.get(7));
         System.out.println("value key 12 " + myHashTable.get(12));
+
 
         System.out.println(" ");
         System.out.println("_______________________________________________");
@@ -40,10 +41,12 @@ public class TestMyHashTable {
         System.out.println("Testing contains method:");
         System.out.println("Does table contain value Olzhas Omerzak? " + myHashTable.contains("Olzhas Omerzak"));
 
+
         System.out.println(" ");
         System.out.println("_______________________________________________");
         System.out.println("Testing getKey method:");
         System.out.println("Key for value Olzhas Omerzak: " + myHashTable.getKey("Olzhas Omerzak"));
+
 
         System.out.println(" ");
         System.out.println(" ");
